@@ -1,9 +1,17 @@
-bin/test : bin/test.cpp
-    g++ bin/test.cpp -o bin/test
+bin/test : src/tui_test.cpp
+	g++ src/tui_test.cpp -o bin/test -std=c++2a -1ftxui-screen -lftxui-component -lftxui-dom
 
-ejecutar : bin/test
+bin/space : src/main.cpp
+	g++ src/main.cpp -o bin/space -std=c++2a -lftxui-screen -lftxui-component -lftxui-dom -Iinclude
+
+
+run : bin/space
+	./bin/space
+
+runtTest : bin/test
 	./bin/test
-hola : receta2
-	echo Hola mundo
-receta2 :
-	echo receta2
+ hola :
+ 	echo Hola mundo
+
+ receta2:
+	echo receta

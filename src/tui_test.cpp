@@ -2,10 +2,15 @@
 #include <ftxui/scree/screen.hpp>
 #include <ftxui/screen/string.hpp>
 #include <iostream>
+int main(void){
+
 using namespace ftxui;
-int main (){
-    Element label = text("Hola mundo");
-    Element container = hbox ({label});
+Element document =
+hbox({
+    text("left") | border,
+    text("middle") | border | flex,
+    text("right") | border,
+});
 
     //crea la pantalla y establece el contenido.
     auto screen = Screen::Create(
@@ -14,5 +19,5 @@ int main (){
     );
     Render(screen,container);
     screen.Print();
-    return 0;
+    return EXIT_SUCCESS;
 }

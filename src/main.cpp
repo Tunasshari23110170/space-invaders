@@ -1,28 +1,28 @@
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <thread>
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>
 #include <ftxui/screen/string.hpp>
 #include <ftxui/screen/terminal.hpp>
 #include <fstream>
+#include <Dibujo.hpp>
 
 using namespace std;
 using namespace ftxui;
 
-int main (int argc, char const *argv[])
+int (int argc, char const *argv[])
 {
-    fstream archivo;
-    archivo.open("./assets/images/cañon.txt")
-    string canon;
-    archivo>>alien;
-    archivo.clase();
-    int fotograma=0,
-    while (true)
+    Dibujo dTanque("./assets/images/canon.txt");
+    Dibujo dAlien("./assets/images/alien.txt");
+    Dibujo dBloque("./assets/images/canon.txt");
+
+    int fotograma =0;
+    while(true)
     {
-    fotograma++;
-    
+        fotograma++;
+        Element personaje=spinner(21,fotograma) | bold
     }
-    
+
 
 }
