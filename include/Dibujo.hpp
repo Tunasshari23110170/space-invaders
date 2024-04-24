@@ -1,6 +1,5 @@
 #include <fstream>
 #include <ftxui/dom/elements.hpp>
-
 using namespace std;
 using namespace ftxui;
 
@@ -14,7 +13,7 @@ public:
     {
         archivo.open(path);
         Elements lineas;
-        while(!archivo.eof())
+        while (!archivo.eof())
         {
             string linea;
             getline(archivo, linea);
@@ -26,5 +25,5 @@ public:
     Element GetElement(){
         return this->contenido;
     }
-    ~Dibujo(string) {}
+    ~Dibujo() {}
 };

@@ -1,5 +1,5 @@
 #include<ftxui/dom/elements.hpp>
-#include <ftxui/scree/screen.hpp>
+#include <ftxui/screen/screen.hpp>
 #include <ftxui/screen/string.hpp>
 #include <iostream>
 int main(void){
@@ -15,9 +15,9 @@ hbox({
     //crea la pantalla y establece el contenido.
     auto screen = Screen::Create(
         Dimension::Full (),
-        Dimension::Fit(container)
+        Dimension::Fit(document)
     );
-    Render(screen,container);
+    Render(screen,document);
     screen.Print();
     return EXIT_SUCCESS;
 }
