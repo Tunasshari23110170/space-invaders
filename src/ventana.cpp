@@ -1,6 +1,9 @@
 #include <iostream>
 #include <ftxui/component/component.hpp>
 #include<ftxui/component/screen_interactive.hpp>
+#include <Dibujo.hpp>
+#include <thread>
+
 
 using namespace std;
 using namespace ftxui;
@@ -8,18 +11,21 @@ using namespace ftxui;
 
 int main(int argc, char const *argv[])
 {
-    auto Pantalla = Screen::Create(Dimension::Full(), Dimension::Fixed(10));
-    Render(Pantalla, border(text("Hola")));
-    Pantalla.PixelAt(5, 5).character = 'm';
+    Dibujo palabra1("Hola",0,5);
+    Dibujo palabra2("Adios",5,5);
 
-    string prueba = "Otro";
-    int posicionX = 6;
-    int posicionY = 4;
-    for (auto &&letra : prueba)
-    {
-        Pantalla.PixelAt(posicionX, posicionY).character = letra;
-        posicionX++;
-    }
+    auto Pantalla = Screen::Create(Dimension::Full(), Dimension::Full());
+
+    while (true){
+     
+        this_thread::sleep_for(0.1s);
+        palabra1.Dibujar(Pantalla);
+        palabra2.Dibujar(Pantalla);
+
     Pantalla.Print();
+    Pantalla.Clear();
+    cout << Pantalla.ResetPosition();
+
+    }
     return 0;
 }

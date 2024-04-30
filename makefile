@@ -7,12 +7,11 @@ bin/space : src/main.cpp
 bin/ventana : src/ventana.cpp
 	g++ src/ventana.cpp -o bin/ventana -std=c++2a -lftxui-screen -lftxui-component -lftxui-dom -Iinclude
 
-
-run : bin/space
-	./bin/space
-
 runtTest : bin/test
 	./bin/test
  
- runVentana : bin/ventana
+runVentana : bin/ventana
 	./bin/ventana
+
+run : bin/space
+	./bin/space
