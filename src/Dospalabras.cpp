@@ -8,7 +8,7 @@ using namespace ftxui;
 
 int main(int argc, char const *argv[])
 {
-    string palabra= "Shari";
+    string contenido= "Shari";
     string palabra2 = "Itzel";
 
     int posicionInicialX = 0;
@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
 
         int posicionPalabra2X = 8;
         int posicionPalabra2Y = 0;
-        for (auto &&letra : palabra)
+        for (auto &&letra : contenido)
         {
             int posicionFinalX = posicionInicialX + posicionPalabraX;
             int posicionFinalY = posicionInicialY + posicionPalabraY;
